@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa62259f-a1fb-4ef4-977f-5e6561b7452c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent3.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent4.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent5.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent4.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent4.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent5.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent5.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

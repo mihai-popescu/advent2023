@@ -1,6 +1,6 @@
 private fun Char.isSpecial() = !this.isDigit() && this != '.'
 
-fun advent3_1(input: String): Long {
+fun advent3p1(input: String): Long {
     val lines = input.split("\n")
     return lines.foldIndexed(0L) { index, acc, line ->
         var startIndex = 0
@@ -20,7 +20,7 @@ fun advent3_1(input: String): Long {
     }
 }
 
-fun advent3_2(input: String): Long {
+fun advent3p2(input: String): Long {
     val lines = input.split("\n")
     return lines.foldIndexed(0L) { indexLine, accTotal, line ->
         accTotal + line.foldIndexed(0L) { indexColoum, accLine, character ->

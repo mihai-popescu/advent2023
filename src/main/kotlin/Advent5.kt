@@ -1,6 +1,4 @@
-
-
-fun advent5_1(input: String): Long {
+fun advent5p1(input: String): Long {
     val inputSplit = input.split("\n\n")
     val seeds = inputSplit.first().dropWhile { c ->
         c != ':'
@@ -8,19 +6,6 @@ fun advent5_1(input: String): Long {
     val map = inputSplit.drop(1)
     return mapValues(seeds, map).min()
 }
-
-fun advent5_2(input: String): Long {
-    val inputSplit = input.split("\n\n")
-    val seedsRange = inputSplit.first().dropWhile { c ->
-        c != ':'
-    }.drop(2).split(' ').map { it.toLong() }
-    val seeds = (seedsRange.indices step 2).map {
-        seedsRange[it] to seedsRange[it + 1]
-    }
-    val map = inputSplit.drop(1)
-    return mapValues2(seeds, map).min()
-}
-
 
 private fun mapValues(values: List<Long>, maps: List<String>): List<Long> {
     if (maps.isEmpty()) return values
@@ -32,6 +17,18 @@ private fun mapValues(values: List<Long>, maps: List<String>): List<Long> {
             triple[0] + value - triple[1]
         } ?: value
     }, maps.drop(1))
+}
+
+fun advent5p2(input: String): Long {
+    val inputSplit = input.split("\n\n")
+    val seedsRange = inputSplit.first().dropWhile { c ->
+        c != ':'
+    }.drop(2).split(' ').map { it.toLong() }
+    val seeds = (seedsRange.indices step 2).map {
+        seedsRange[it] to seedsRange[it + 1]
+    }
+    val map = inputSplit.drop(1)
+    return mapValues2(seeds, map).min()
 }
 
 private fun mapValues2(values: List<Pair<Long, Long>>, maps: List<String>): List<Long> {
@@ -50,9 +47,11 @@ private fun mapValues2(values: List<Pair<Long, Long>>, maps: List<String>): List
                     triple[1] + triple[2] - 1
                 )
             }?.let { triple ->
-                newValues.add(triple[0] + initialIndex - triple[1] to minOf(
-                    rangeLeft,
-                    triple[2] + (triple[1] - initialIndex))
+                newValues.add(
+                    triple[0] + initialIndex - triple[1] to minOf(
+                        rangeLeft,
+                        triple[2] + (triple[1] - initialIndex)
+                    )
                 ).also {
                     val newRange =
                         rangeLeft - minOf(rangeLeft, triple[2] + (triple[1] - initialIndex))

@@ -3,23 +3,21 @@ private val digitStrings =
 private val digitChar = listOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
 
 
-fun advent1_1(input: String): Long {
+fun advent1p1(input: String): Long {
     return input.lowercase().split("\n").fold(0L) { acc, s ->
-        val charDigit = s.findAnyOf(digitChar)
-        val firstDigit = when {
-            charDigit == null -> 0
+        val firstDigit = when (val charDigit = s.findAnyOf(digitChar)) {
+            null -> 0
             else -> digitChar.indexOf(charDigit.second)
         }
-        val lastCharDigit = s.findLastAnyOf(digitChar)
-        val lastDigit = when {
-            lastCharDigit == null -> 0
+        val lastDigit = when (val lastCharDigit = s.findLastAnyOf(digitChar)) {
+            null -> 0
             else -> digitChar.indexOf(lastCharDigit.second)
         }
         acc + firstDigit * 10 + lastDigit
     }
 }
 
-fun advent1_2(input: String): Long {
+fun advent1p2(input: String): Long {
     return input.lowercase().split("\n").fold(0L) { acc, s ->
         val stringDigit = s.findAnyOf(digitStrings)
         val charDigit = s.findAnyOf(digitChar)

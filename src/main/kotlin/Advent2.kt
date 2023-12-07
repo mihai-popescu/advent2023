@@ -1,4 +1,4 @@
-fun advent2_1(input: String): Long {
+fun advent2p1(input: String): Long {
     return input.split("\n").foldIndexed(0L) { index, acc, s ->
         val add = s.dropWhile { c ->
             c != ':'
@@ -24,7 +24,7 @@ fun advent2_1(input: String): Long {
     }
 }
 
-fun advent2_2(input: String): Long {
+fun advent2p2(input: String): Long {
     return input.split("\n").fold(0L) { acc, s ->
         var blue = 0
         var green = 0

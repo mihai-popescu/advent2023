@@ -1,6 +1,6 @@
 import kotlin.math.pow
 
-fun advent4_1(input: String): Long {
+fun advent4p1(input: String): Long {
     return input.split("\n").fold(0L) { acc, s ->
         val groups = s.dropWhile { c ->
             c != ':'
@@ -11,7 +11,7 @@ fun advent4_1(input: String): Long {
         acc + if (result == 0) 0 else 2.toFloat().pow(result - 1).toLong()
     }
 }
-fun advent4_2(input: String): Long {
+fun advent4p2(input: String): Long {
     val winnings = mutableListOf<Int>()
     input.split("\n").forEachIndexed { index, s ->
         val groups = s.dropWhile { c ->
