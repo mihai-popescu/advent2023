@@ -9,11 +9,11 @@ fun advent5p1(input: String): Long {
 
 private fun mapValues(values: List<Long>, maps: List<String>): List<Long> {
     if (maps.isEmpty()) return values
-    val mapTriple = maps.first().split("\n").drop(1).map {
-        it.split(" ").map { it.toLong() }
+    val conversionMap = maps.first().split("\n").drop(1).map { conversionString ->
+        conversionString.split(" ").map { valueString -> valueString.toLong() }
     }
     return mapValues(values.map { value ->
-        mapTriple.firstOrNull { triple -> value in LongRange(triple[1], triple[1] + triple[2]) }?.let { triple ->
+        conversionMap.firstOrNull { conversion -> value in LongRange(conversion[1], conversion[1] + conversion[2]) }?.let { triple ->
             triple[0] + value - triple[1]
         } ?: value
     }, maps.drop(1))
@@ -33,8 +33,8 @@ fun advent5p2(input: String): Long {
 
 private fun mapValues2(values: List<Pair<Long, Long>>, maps: List<String>): List<Long> {
     if (maps.isEmpty()) return values.map { it.first }
-    val mapTriple = maps.first().split("\n").drop(1).map {
-        it.split(" ").map { it.toLong() }
+    val mapTriple = maps.first().split("\n").drop(1).map { conversionString ->
+        conversionString.split(" ").map { it.toLong() }
     }
     val newValues = mutableListOf<Pair<Long, Long>>()
     values.forEach { (initialValue, range) ->
@@ -60,7 +60,7 @@ private fun mapValues2(values: List<Pair<Long, Long>>, maps: List<String>): List
                 }
             } ?: run {
                 val newRange = LongRange(initialIndex, initialIndex + rangeLeft - 1)
-                mapTriple.filter { it[1] in newRange }.sortedBy { it[1] }.firstOrNull()?.let {
+                mapTriple.filter { it[1] in newRange }.minByOrNull { it[1] }?.let {
                     val rangeI = it[1] - initialIndex
                     newValues.add(initialIndex to rangeI).also {
                         initialIndex += rangeI
