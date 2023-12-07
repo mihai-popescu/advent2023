@@ -7,6 +7,13 @@ fun advent6p1(input: String): Long {
     }
 }
 
+fun advent6p2(input: String): Long {
+    return input.split("\n").map { it.dropWhile { c -> !c.isDigit() } }
+        .map { it.replace(" ", "")}.map { numberString -> numberString.toLong() }.run {
+            (first() / 2 - getStart(0, first() / 2, first(), last())) * 2 - (first() - 1) % 2
+        }
+}
+
 private fun getStart(start: Long, end: Long, runTime: Long, distance: Long): Long {
     val value = (start + end) / 2
     return when {
