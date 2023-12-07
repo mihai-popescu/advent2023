@@ -1,11 +1,13 @@
 import data.ADVENT_DAY_5_DATA
+import data.ADVENT_DAY_6_DATA
+import data.ADVENT_DAY_6_DATA_TEST
 
 fun main() {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${adventDay5Part2()}")
+    println("Program result: ${adventDay6Part1()}")
 }
 
 private fun adventDay5Part2(): Long = advent5p2(ADVENT_DAY_5_DATA)
+
+private fun adventDay6Part1Test(): Long = advent6p1(ADVENT_DAY_6_DATA_TEST)
+
+private fun adventDay6Part1(): Long = advent6p1(ADVENT_DAY_6_DATA)
