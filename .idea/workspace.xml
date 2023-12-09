@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa62259f-a1fb-4ef4-977f-5e6561b7452c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Advent7.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/data/Day7.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Advent6.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Advent6.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +66,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="JetRunConfigurationType">
-        <watch expression="input.split(&quot;\n&quot;).map { it.dropWhile { c -&gt; !c.isDigit() } }.map { it.split(' ') }" language="kotlin" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
